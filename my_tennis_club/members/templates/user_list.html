@@ -16,6 +16,7 @@ User List
             <th>Address</th>
             <th>Education</th>
             <th>Profession</th>
+            <th>Actions</th> <!-- New column for actions -->
         </tr>
     </thead>
     <tbody>
@@ -28,6 +29,10 @@ User List
             <td>{{ user.address }}</td>
             <td>{{ user.education }}</td>
             <td>{{ user.profession }}</td>
+            <td>
+                <a href="{% url 'edit_user' user.id %}" class="btn btn-primary btn-sm">Edit</a>
+                <a href="{% url 'delete_user' user.id %}" class="btn btn-danger btn-sm">Delete</a>
+            </td>
         </tr>
         {% endfor %}
     </tbody>
